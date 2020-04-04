@@ -2,6 +2,7 @@
 #define WARRIORS_H
 
 #include<bits/stdc++.h>
+#include "parameter.h"
 
 class warrior {
 public:
@@ -25,10 +26,11 @@ public:
 
     int die();
     int update_health(int);
-    int move();
     virtual int attack(warrior*);
 
     ~warrior() = default;
+
+    Unit_parameter UP = Singleton::UP;
 
 };
 

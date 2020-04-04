@@ -3,7 +3,6 @@
 
 
 #include "../include/warriors.h"
-#include "../include/parameter.h"
 
 warrior::warrior(bool ally, int level) :
     dead(false),
@@ -27,10 +26,6 @@ int warrior::update_health(int shift) {
         return die();
     }
     return 0;
-}
-
-int warrior::move() {
-    position += speed;
 }
 
 int warrior::die() {

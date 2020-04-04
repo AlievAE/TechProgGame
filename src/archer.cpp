@@ -7,17 +7,17 @@
 
 archer::archer(bool ally, int level) :
     warrior(ally, level),
-    min_range(ARCHER_MIN_RANGE[level]),
-    melee_damage(ARCHER_MELEE_DAMAGE[level]) {
+    min_range(UP.ARCHER_MIN_RANGE[level]),
+    melee_damage(UP.ARCHER_MELEE_DAMAGE[level]) {
 
-    current_health = ARCHER_HEALTH[level];
+    current_health = UP.ARCHER_HEALTH[level];
     max_health = current_health;
-    speed = ARCHER_SPEED[level];
-    cost = ARCHER_COST[level];
-    bounty = ARCHER_BOUNTY[level];
-    attack_range = ARCHER_ATTACK_RANGE[level];
-    vision = ARCHER_VISION[level];
-    damage = ARCHER_DAMAGE[level];
+    speed = UP.ARCHER_SPEED[level];
+    cost = UP.ARCHER_COST[level];
+    bounty = UP.ARCHER_BOUNTY[level];
+    attack_range = UP.ARCHER_ATTACK_RANGE[level];
+    vision = UP.ARCHER_VISION[level];
+    damage = UP.ARCHER_DAMAGE[level];
 }
 
 int archer::type() {

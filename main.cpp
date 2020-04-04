@@ -1,13 +1,9 @@
-#include "src/lancer.cpp"
-#include "src/archer.cpp"
-#include "src/cavalry_lancer.cpp"
-#include "src/cavalry_archer.cpp"
+#include "src/field.cpp"
 
 main() {
-    warrior* ALEXEI = new archer(0, 1);
-    warrior* EGOR = new lancer(1, 0);
-    EGOR->position = 3;
-    std::cout << ALEXEI->attack(EGOR) << std::endl;
-    std::cout << ALEXEI->attack(EGOR) << std::endl;
-    std::cout << EGOR->dead << std::endl;
+    Field Field = Sing::field;
+    Field.create_unit(3, 0);
+    Field.upgrade(0, 0);
+    std::cout << Field.player[0]->army.size() << std::endl;
+    std::cout << Field.player[1]->army.size() << std::endl;
 }

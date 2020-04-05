@@ -1,0 +1,7 @@
+add_library(archer SHARED archer.cpp)
+add_library(cavalry SHARED cavalry.cpp)
+add_library(cavalry_archer SHARED cavalry_archer.cpp)
+add_library(cavalry_lancer SHARED cavalry_lancer.cpp)
+add_library(field SHARED field.cpp)
+add_library(lancer SHARED lancer.cpp)
+add_library(warriors SHARED warriors.cpp)

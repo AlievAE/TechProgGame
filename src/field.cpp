@@ -64,6 +64,7 @@ bool Player::create_unit(int type) {
         }
         return false;
     }
+    return false;
 }
 
 Field::Field(int size) :

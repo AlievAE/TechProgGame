@@ -70,6 +70,7 @@ int Horde::get_size() {
     for (auto sq : rgt) {
         res += sq->get_size();
     }
+    return res;
 }
 
 int Horde::attack(Horde* enemy) {

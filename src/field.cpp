@@ -26,43 +26,26 @@ bool Player::upgrade(int type) {
 
 bool Player::create_unit(int type) {
     warrior* tmp = nullptr;
-    if (type == 1) {
-        if (gold >= UP.LANCER_COST[barrack[0]]) {
-            gold -= UP.LANCER_COST[barrack[0]];
-            tmp = new lancer(ally, barrack[0]);
-            army[type - 1].push_back(tmp);
-            return true;
-        }
+    int index = std::min(type - 1, 2);
+    int need = UP.COSTS[type - 1][barrack[index]];
+    if (gold < need) {
         return false;
+    }
+    gold -= need;
+    if (type == 1) {
+        tmp = new lancer(ally, barrack[index]);
     }
     else if (type == 2) {
-        if (gold >= UP.ARCHER_COST[barrack[1]]) {
-            gold -= UP.ARCHER_COST[barrack[1]];
-            tmp = new archer(ally, barrack[1]);
-            army[type - 1].push_back(tmp);
-            return true;
-        }
-        return false;
+        tmp = new archer(ally, barrack[index]);
     }
     else if (type == 3) {
-        if (gold >= UP.CAVALRY_LANCER_COST[barrack[2]]) {
-            gold -= UP.CAVALRY_LANCER_COST[barrack[2]];
-            tmp = new cavalry_lancer(ally, barrack[2]);
-            army[type - 1].push_back(tmp);
-            return true;
-        }
-        return false;
+        tmp = new cavalry_lancer(ally, barrack[index]);
     }
     else if (type == 4) {
-        if (gold >= UP.CAVALRY_ARCHER_COST[barrack[2]]) {
-            gold -= UP.CAVALRY_ARCHER_COST[barrack[2]];
-            tmp = new cavalry_archer(ally, barrack[2]);
-            army[type - 1].push_back(tmp);
-            return true;
-        }
-        return false;
+        tmp = new cavalry_archer(ally, barrack[index]);
     }
-    return false;
+    army[type - 1].push_back(tmp);
+    return true;
 }
 
 Field::Field(int size) :

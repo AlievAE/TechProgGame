@@ -50,6 +50,8 @@ public:
 
     const int BUFF_COST[4] = {5, 6, 7, 8};
 
+    int COSTS[4][3] = {{2, 4, 6}, {3, 6, 9}, {10, 20, 30}, {3, 6, 9}};
+
     friend class Singleton;
 private:
     Unit_parameter() = default;

@@ -26,6 +26,7 @@ public:
 
     int die();
     int update_health(int);
+    void buff();
     virtual int attack(warrior*);
 
     ~warrior() = default;

@@ -3,20 +3,25 @@
 
 #include "parameter.h"
 #include "warriors.h"
+#include "horde.h"
 
 class Player {
 public:
+    Field_parameter FP = Singleton::FP;
+    Unit_parameter UP = Singleton::UP;
     bool ally;
     int gold;
-    std::vector<warrior*> army;
+    std::vector<warrior*> army[4];
+    std::vector<Squad*> squads[4];
+    std::vector<Horde*> hordes;
     int barrack[3];
     bool upgrade(int type);
     bool create_unit(int type);
+    void make_squad(int type);
+    void make_horde(int type);
+    void buff(int index);
 
     Player(bool ally);
-
-    Field_parameter FP = Singleton::FP;
-    Unit_parameter UP = Singleton::UP;
 };
 
 class Field {

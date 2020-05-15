@@ -46,6 +46,10 @@ public:
     const int CAVALRY_ARCHER_MELEE_DAMAGE[3] = {1, 3, 5};
     const int CAVALRY_ARCHER_BERSERK[5] = {2, 4, 6, 9, 13};
 
+    const int DAMAGE_BUFF = 2;
+
+    const int BUFF_COST[4] = {5, 6, 7, 8};
+
     friend class Singleton;
 private:
     Unit_parameter() = default;

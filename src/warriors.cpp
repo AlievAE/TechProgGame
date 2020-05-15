@@ -41,4 +41,8 @@ int warrior::type() {
     return 0;
 }
 
+void warrior::buff() {
+    damage += UP.DAMAGE_BUFF;
+}
+
 #endif /* WARRIORS_CPP */
